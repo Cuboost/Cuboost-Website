@@ -1,0 +1,368 @@
+/* Box Sizing */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Colors */
+:root {
+    --primary: #445ca6;
+    --secondary: #6d8dee;
+    --dark: #344780;
+    --black: #253259;
+    --blurred: rgba(240, 248, 255, 0.4);
+    --default-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    background: linear-gradient(to left, var(--primary), var(--secondary));
+    font-family: 'Abril Fatface', cursive;
+}
+
+/* Main View */
+#main-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    overflow: hidden;
+}
+
+/* Navigation */
+.nav {
+    padding: 15px 0;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+}
+
+/* Clock */
+#clock {
+    min-width: 300px;
+    min-height: 300px;
+    width: 40vh;
+    height: 40vh;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 50%;
+    border: 2px solid var(--black);
+    position: relative;
+    box-shadow: var(--default-shadow);
+    margin: 0 auto;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+@media screen and (min-width: 1000px) {
+    #clock {
+        max-width: 30vw;
+        max-height: 30vw;
+    }
+}
+
+#clock .number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+    color: var(--black);
+}
+
+#clock .number1 {
+    --rotation: 30deg;
+}
+
+#clock .number2 {
+    --rotation: 60deg;
+}
+
+#clock .number3 {
+    --rotation: 90deg;
+}
+
+#clock .number4 {
+    --rotation: 120deg;
+}
+
+#clock .number5 {
+    --rotation: 150deg;
+}
+
+#clock .number6 {
+    --rotation: 180deg;
+}
+
+#clock .number7 {
+    --rotation: 210deg;
+}
+
+#clock .number8 {
+    --rotation: 240deg;
+}
+
+#clock .number9 {
+    --rotation: 270deg;
+}
+
+#clock .number10 {
+    --rotation: 300deg;
+}
+
+#clock .number11 {
+    --rotation: 330deg;
+}
+
+#clock .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid aliceblue;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+#clock::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+#clock .hand.second {
+    width: 3px;
+    height: 45%;
+    background-color: red;
+    transition: all 0.3s;
+}
+
+#clock .hand.minute {
+    width: 7px;
+    height: 40%;
+    background-color: black;
+    transition: all 0.3s;
+}
+
+#clock .hand.hour {
+    width: 10px;
+    height: 35%;
+    background-color: black;
+    transition: all 0.3s;
+}
+
+@keyframes clock-zoom {
+    to {
+        opacity: 1;
+        width: 50vw;
+        height: 50vw;
+    }
+}
+
+@keyframes clock-zoom-out {
+    to {
+        opacity: 1;
+        width: 40vw;
+        height: 40vw;
+    }
+}
+
+/* Analog */
+#analog {
+    width: fit-content;
+    min-width: 50vw;
+    min-height: 50px;
+    padding: 10px 40px;
+    background-color: rgb(51, 72, 125);
+    color: aliceblue;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--default-shadow);
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 2s;
+    font-size: 1rem;
+}
+
+#date {
+    font-size: 2rem;
+}
+
+/* Clock and Analog View */
+.clock-analog {
+    text-align: center;
+}
+
+/* Settings */
+#settings {
+    border-radius: 20px;
+    background-color: var(--blurred);
+    margin: 20px 30px;
+    min-height: 30vh;
+    padding: 20px 30px;
+}
+
+.settings-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 60px;
+}
+
+/* Buttons */
+button {
+    width: 120px;
+    padding: 12px 0;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: aliceblue;
+    background-color: var(--dark);
+    transition: all 1s;
+}
+
+button:hover {
+    background-color: #25335a;
+    color: aliceblue;
+}
+
+button:active {
+    background-color: #19233e;
+    color: rgb(223, 235, 245);
+}
+
+/* Color Picker */
+input[type="color" i] {
+    border-radius: 10px;
+    padding: 2px;
+    border: none;
+    background-color: rgba(240, 248, 255, 0.7);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+input[type="color" i]:hover {
+    background-color: rgba(194, 199, 204, 0.7);
+}
+
+input[type="color" i]:active {
+    background-color: rgba(161, 164, 168, 0.7);
+}
+
+/* Text Input */
+input[type="text" i] {
+    border-radius: 10px;
+    padding: 5px;
+    border: none;
+    background-color: rgba(240, 248, 255, 0.7);
+    transition: 0.4s;
+}
+
+input[type="text" i]:hover {
+    background-color: rgba(223, 227, 231, 0.7);
+}
+
+input[type="text" i]:active {
+    background-color: rgba(212, 216, 221, 0.7);
+}
+
+/* Switch */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--primary);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Other */
+.unselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

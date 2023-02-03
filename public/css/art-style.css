@@ -1,0 +1,189 @@
+/* Colors */
+:root {
+    --primary: #D75AE0;
+    --secondary: #BF4FC7;
+    --light: #E45FED;
+    --dark: #9A40A1;
+    --black: #5D2761;
+}
+
+/* Background */
+body {
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, var(--primary), var(--dark)) fixed;
+}
+
+/* Loading Splash */
+.splash {
+    position: fixed;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--dark);
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: wait;
+}
+
+.splash.display-none {
+    position: fixed;
+    opacity: 0;
+    z-index: -100;
+    background-color: var(--black);
+    transition: all 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.loading {
+    position: relative;
+    animation: fadeIn 3s ease-in-out;
+    text-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.loading span {
+    position: relative;
+    background-color: var(--primary);
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    animation: flip 2s calc(.2s * var(--i)) ease-in-out infinite;
+}
+
+@keyframes flip {
+
+    0%,
+    80% {
+        transform: rotateY(360deg)
+    }
+}
+
+/* Title */
+#titleText {
+    font-size: 60px;
+    padding: 30px;
+}
+
+.title {
+    width: 90vw;
+    text-align: center;
+    background-color: #5D2761;
+    border-radius: 50px;
+    margin-top: 8px;
+}
+
+/* Center */
+.center {
+    width: 99vw;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Boxes */
+.box {
+    background-color: #9A40A1;
+    min-width: 30vw;
+    height: 20vw;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 20px #341336b4;
+}
+
+#color-box {
+    margin: 0;
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+#utensil-box,
+#style-box {
+    min-width: 300px;
+    justify-content: space-evenly;
+    margin: 0;
+}
+
+#image-box {
+    background-image: url("./images/Heads.png") cover fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+}
+
+#utensilText,
+#styleText {
+    padding: 10px;
+}
+
+/* Organization */
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.column {
+    height: fit-content;
+}
+
+/* Buttons */
+button {
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: monospace;
+    transition-duration: 0.4s;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#backHomeButton {
+    position: absolute;
+    margin-left: 8vw;
+    margin-top: 20px;
+}

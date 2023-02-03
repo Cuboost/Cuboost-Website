@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    height: 100%;
+    background: linear-gradient(to right,
+            #575ce5 50%,
+            #f9fbfc 50%) fixed;
+}
+
+.container {
+    background-color: white;
+    width: 70vw;
+    min-width: 400px;
+    padding: 50px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: 15px 30px 35px black;
+    border-radius: 10px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+
+.stats {
+    text-align: right;
+    color: black;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.coin {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: 50px auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.coin img {
+    width: 145px;
+}
+
+.heads,
+.tails {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.tails {
+    transform: rotateX(180deg);
+}
+
+@keyframes spin-tails {
+    0% {
+        transform: rotateX(0);
+    }
+
+    100% {
+        transform: rotateX(1980deg);
+    }
+}
+
+@keyframes spin-heads {
+    0% {
+        transform: rotateX(0);
+    }
+
+    100% {
+        transform: rotateX(2160deg);
+    }
+}
+
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 120px;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    transition: 0.4s;
+}
+
+/* Flip Button */
+#flip-button {
+    background-color: rgb(60, 114, 241);
+    color: white;
+}
+
+#flip-button:hover {
+    background-color: rgb(55, 103, 216);
+    color: white;
+}
+
+#flip-button:active {
+    background-color: rgb(46, 88, 186);
+    color: rgb(220, 219, 219);
+}
+
+#flip-button:disabled {
+    background-color: rgb(206, 206, 206);
+    color: black;
+}
+
+#reset-button {
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+
+#reset-button:hover,
+#back-button:hover {
+    background-color: rgb(236, 236, 236);
+    color: rgb(0, 0, 0);
+}
+
+#reset-button:active,
+#back-button:active {
+    background-color: rgb(200, 200, 200);
+    color: rgb(0, 0, 0);
+}
+
+#back-button {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.unselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

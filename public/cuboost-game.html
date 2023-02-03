@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Cuboost</title>
+  <link rel="shortcut icon" href="./css/images/cuboost-favicon.png">
+  <link rel="stylesheet" href="./cuboost-game/TemplateData/cuboost-style.css">
+</head>
+
+<body>
+  <a href="index.html"><button id="back-home">Back Home</button></a>
+  <div class="about-game" id="about-game">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeAboutGame()">&times;</a>
+    <div class="about-game-container" id="about-game-container">
+      <div class="about-game-text">
+        <h1>CUBOOST</h1>
+        <br>
+        <h2>Cube - Boost</h2>
+        <p>
+          You might wonder, why the name Cuboost? Well the game's name is actually made out of two words: Cube and
+          Boost!
+        </p>
+        <hr>
+        <h2>A simple but fun game</h2>
+        <p>
+          Cuboost was made so that you can have fun! That is Cuboost's first rule.
+        </p>
+        <hr>
+        <h2>Complete all levels</h2>
+        <p>
+          Cuboost has a bunch of levels to play, try to complete them all! Already finished all of them? Don't worry,
+          more will come out soon!
+        </p>
+        <hr>
+        <h2>No ads</h2>
+        <p>
+          Cuboost has no ads, and we intend to make it stay that way. We hope that you enjoy playing our game!
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="unity-webgl">
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <button onclick="openAboutGame()">About game</button>
+        <img src="./cuboost-game/TemplateData/fullscreen-button.png" alt="Full Screen" id="unity-fullscreen-button">
+        <div id="unity-build-title">Cuboost</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const backgroundAboutGame = document.getElementById("about-game");
+    const aboutGameContainer = document.getElementById("about-game-container");
+    // About Game Pop-up
+    function closeAboutGame() {
+      aboutGameContainer.style.opacity = "0";
+      backgroundAboutGame.style.opacity = "0";
+      setTimeout(() => {
+        backgroundAboutGame.style.zIndex = "-100";
+      }, 1000);
+    };
+
+    function openAboutGame() {
+      backgroundAboutGame.style.zIndex = "200";
+      aboutGameContainer.style.opacity = "1";
+      backgroundAboutGame.style.opacity = "1";
+    };
+
+    // Unity
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var loadingBar = document.querySelector("#unity-loading-bar");
+    var progressBarFull = document.querySelector("#unity-progress-bar-full");
+    var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+    var warningBanner = document.querySelector("#unity-warning");
+
+    // Shows a temporary message banner/ribbon for a few seconds, or
+    // a permanent error message on top of the canvas if type=='error'.
+    // If type=='warning', a yellow highlight color is used.
+    // Modify or remove this function to customize the visually presented
+    // way that non-critical warnings and error messages are presented to the
+    // user.
+    function unityShowBanner(msg, type) {
+      function updateBannerVisibility() {
+        warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+      }
+      var div = document.createElement('div');
+      div.innerHTML = msg;
+      warningBanner.appendChild(div);
+      if (type == 'error') div.style = 'background: red; padding: 10px;';
+      else {
+        if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+        setTimeout(function () {
+          warningBanner.removeChild(div);
+          updateBannerVisibility();
+        }, 5000);
+      }
+      updateBannerVisibility();
+    }
+
+    var buildUrl = "./cuboost-game/Build";
+    var loaderUrl = buildUrl + "/Web.loader.js";
+    var config = {
+      dataUrl: buildUrl + "/Web.data",
+      frameworkUrl: buildUrl + "/Web.framework.js",
+      codeUrl: buildUrl + "/Web.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "Cuboost",
+      productName: "Cuboost",
+      productVersion: "1.0",
+      showBanner: unityShowBanner,
+    };
+
+    // By default Unity keeps WebGL canvas render target size matched with
+    // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+    // Set this to false if you want to decouple this synchronization from
+    // happening inside the engine, and you would instead like to size up
+    // the canvas DOM size and WebGL render target sizes yourself.
+    // config.matchWebGLToCanvasSize = false;
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      // Mobile device style: fill the whole browser client area with the game canvas:
+
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+      document.getElementsByTagName('head')[0].appendChild(meta);
+      container.className = "unity-mobile";
+      canvas.className = "unity-mobile";
+
+      // To lower canvas resolution on mobile devices to gain some
+      // performance, uncomment the following line:
+      // config.devicePixelRatio = 1;
+
+      unityShowBanner('WebGL builds are not supported on mobile devices.');
+    } else {
+      // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+
+      canvas.style.width = "960px";
+      canvas.style.height = "600px";
+    }
+
+    loadingBar.style.display = "block";
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        progressBarFull.style.width = 100 * progress + "%";
+      }).then((unityInstance) => {
+        loadingBar.style.display = "none";
+        fullscreenButton.onclick = () => {
+          unityInstance.SetFullscreen(1);
+        };
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+/* Colors */
+:root {
+    --primary: #6A79A6;
+    --secondary: #808CA6;
+    --light: #C4D4F2;
+    --dark: #3E518C;
+    --dark-hover: #2f4074;
+    --dark-active: #202e57;
+    --black: #2E3959;
+    --text-color: #f4f7fe;
+    --text-color-hover: #bacaf2;
+    --text-container: #62709a;
+}
+
+body {
+    font-family: 'Unbounded', cursive;
+    background-color: var(--primary);
+    color: var(--text-color);
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+}
+
+.title {
+    background-color: var(--text-container);
+    border-radius: 20px;
+    padding: 20px 40px;
+    width: fit-content;
+    margin: 10px auto;
+}
+
+/* Settings button */
+.settings-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Messages */
+.messages {
+    text-align: center;
+    width: 80vw;
+    height: 50vh;
+    /* background-color: var(--text-container); */
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+/* Input */
+.main-text-input {
+    font-family: 'Unbounded', cursive;
+    font-weight: 200;
+    width: 60vw;
+    height: 15vh;
+    border-radius: 10px;
+    border: none;
+    resize: none;
+    padding: 10px;
+    margin: 20px;
+}
+
+.input-container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--text-container);
+}
+
+.send-symbol {
+    font-size: 50px !important;
+    transition: color 1s;
+    cursor: pointer;
+    position: relative;
+    top: 14vh;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.send-symbol:hover {
+    color: var(--text-color-hover);
+}
+
+/* User select */
+.unselectable {
+    user-select: none;
+}
+
+/* Settings */
+.settings {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #1f274086, #0b1228d4);
+    transition: all 1s;
+}
+
+.settings-container {
+    background: linear-gradient(to right, var(--primary), var(--dark));
+    width: 80vw;
+    height: fit-content;
+    border-radius: 40px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.settings-text {
+    height: 80vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.settings-container h1 {
+    font-size: 5vw;
+    text-shadow: 3px 3px #2305039a;
+}
+
+.settings-container hr {
+    width: 70px;
+    border: 3px solid aliceblue;
+    border-radius: 50px;
+    margin: 80px auto;
+}
+
+.settings-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 60px;
+}
+
+.close-btn {
+    text-decoration: none;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 40px;
+    transition: all 0.4s;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: rgb(209, 209, 209);
+}
+
+a:active {
+    color: rgb(164, 164, 164);
+}
+
+/* Button */
+button {
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: var(--dark);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: monospace;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: var(--dark-hover);
+    color: rgb(211, 211, 211);
+}
+
+button:active {
+    background-color: var(--dark-active);
+    color: rgb(211, 211, 211);
+}

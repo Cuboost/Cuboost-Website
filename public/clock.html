@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./css/images/cuboost-favicon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/clock-style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+</head>
+
+<body class="unselectable">
+    <div class="nav">
+        <a href="index.html">
+            <button id="back-home">Back Home</button>
+        </a>
+        <a href="#settings">
+            <button id="edit-button">Edit</button>
+        </a>
+    </div>
+    <div id="main-view">
+        <div class="clock-analog">
+            <!-- Clock -->
+            <div id="clock" onclick="clockZoom()">
+                <div class="hand hour" data-hour-hand></div>
+                <div class="hand minute" data-minute-hand></div>
+                <div class="hand second" data-second-hand></div>
+                <div class="number number1">1</div>
+                <div class="number number2">2</div>
+                <div class="number number3">3</div>
+                <div class="number number4">4</div>
+                <div class="number number5">5</div>
+                <div class="number number6">6</div>
+                <div class="number number7">7</div>
+                <div class="number number8">8</div>
+                <div class="number number9">9</div>
+                <div class="number number10">10</div>
+                <div class="number number11">11</div>
+                <div class="number number12">12</div>
+            </div>
+            <br><br>
+            <!-- Analog -->
+            <div id="analog" onclick="analogZoom()">
+                <h1 id="time">--</h1>
+                <h1 id="date">--</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="settings">
+        <h1>Settings</h1>
+        <div class="settings-row">
+            <label for="primary">Primary Color</label>
+            <input type="color" name="primary" id="primary" value="#445ca6">
+        </div>
+        <div class="settings-row">
+            <label for="secondary">Secondary Color</label>
+            <input type="color" name="secondary" id="secondary" value="#6d8dee">
+        </div>
+        <div class="settings-row">
+            <label for="image">Image</label>
+            <input type="text" name="image" id="image">
+        </div>
+        <div class="settings-row">
+            <label for="head">Date</label>
+            <label class="switch">
+                <input type="checkbox" id="show-date" checked>
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="settings-row">
+            <label for="head">Seconds</label>
+            <label class="switch">
+                <input type="checkbox" id="show-seconds" checked>
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="./js/clock-script.js"></script>
+</body>
+
+</html>

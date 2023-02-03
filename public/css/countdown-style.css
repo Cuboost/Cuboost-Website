@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-size: 100%;
+    background: linear-gradient(rgba(230, 230, 230, 0.2), rgba(170, 170, 170, 0.2)), url("images/new-year.jpg") right/cover fixed;
+    /* background: linear-gradient(rgba(230, 230, 230, 0.2), rgba(170, 170, 170, 0.2)), url("images/fireworks.jpg") center/cover fixed; */
+}
+
+#elements {
+    background-color: rgba(171, 171, 171, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+    transition: all 1s;
+    min-width: 350px;
+    width: 50vw;
+    text-align: center;
+}
+
+#countdown-name {
+    font-size: 5rem;
+    font-weight: bold;
+    padding-bottom: 3rem;
+}
+
+#countdown {
+    display: flex;
+    justify-content: space-around;
+}
+
+#day,
+#hour,
+#minute,
+#second {
+    font-size: 3rem;
+    transition: font-size 0.5s;
+}
+
+@keyframes seconds {
+    to {
+        font-size: 0rem;
+        opacity: 0;
+    }
+}
+
+@keyframes padding-none {
+    to {
+        padding-bottom: 0;
+    }
+}
+
+.credit {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+#countdown-name-dropdown {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+
+/* Links */
+a {
+    text-decoration: none;
+    transition: all 1s;
+    color: white;
+}
+
+a:hover {
+    color: rgb(206, 206, 206);
+}
+
+a:active {
+    color: rgb(174, 174, 174);
+}
+
+/* Unselectable */
+.unselectable {
+    user-select: none;
+}
+
+/* Select */
+select {
+    font-family: "Lato", sans-serif;
+    text-rendering: auto;
+    color: white;
+    background-color: rgba(185, 185, 185, 0.76);
+    cursor: pointer;
+    border-style: solid;
+    border: none;
+    border-image: initial;
+    border-radius: 10px;
+    padding: 3px;
+}

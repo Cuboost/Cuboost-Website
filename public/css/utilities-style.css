@@ -1,0 +1,35 @@
+/* Colors */
+:root {
+    --primary: #A39264;
+    --secondary: #E0C382;
+    --light: #F5E3B3;
+    --dark: #5C5238;
+    --dark-hover: #4f4630;
+    --black: #39321e;
+}
+
+/* Body */
+body {
+    font-family: "Lato", sans-serif;
+    background-color: var(--primary);
+    color: var(--black);
+}
+
+/* Main Content */
+#main {
+    transition: margin-left .5s;
+    padding: 5px 20px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+/* Tiles */
+.tile {
+    width: 40vw;
+    height: 30vw;
+    background: var(--dark);
+    color: var(--light);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation</title>
+    <link rel="icon" type="image/x-icon" href="./css/images/cuboost-favicon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/conversation-style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <div class="title">
+        <h1>Conversations</h1>
+    </div>
+    <button onclick="openSettings()" class="settings-btn">Settings</button>
+    <div class="settings" id="settings">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSettings()">&times;</a>
+        <div class="settings-container" id="settings-container">
+            <div class="settings-text">
+                <h1>Settings</h1>
+                <div class="settings-row">
+                    <div id="conversation-type">
+                        <h2>--</h2>
+                    </div>
+                    <select name="conversation-type-dropdown">
+                        <option value="Fortune Teller" selected>Fortune Teller</option>
+                        <option value="Conversation">Conversation</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p class="messages" id="messages">
+        Our awesome conversation starts here...
+    </p>
+    <div class="input-container">
+        <textarea name="main-text-input" id="main-text-input" class="main-text-input unselectable"
+            placeholder="Write something..."></textarea>
+        <i class="material-symbols-outlined send-symbol unselectable" onclick="send()">
+            send
+        </i>
+    </div>
+
+    <!-- Script -->
+    <script src="js/conversation.js"></script>
+</body>
+
+</html>

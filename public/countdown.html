@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+    <link rel="stylesheet" href="css/countdown-style.css" />
+    <link rel="icon" type="image/x-icon" href="./css/images/cuboost-favicon.png">
+</head>
+
+<body class="unselectable">
+    <div id="elements">
+        <h2 id="countdown-name">New Year</h2>
+        <div id="countdown">
+            <div id="container-day">
+                <h3 id="day">--</h3>
+                <h3>Day</h3>
+            </div>
+            <div id="container-hour">
+                <h3 id="hour">--</h3>
+                <h3>hour</h3>
+            </div>
+            <div id="container-minute">
+                <h3 id="minute">--</h3>
+                <h3>minute</h3>
+            </div>
+            <div id="container-second">
+                <h3 id="second">--</h3>
+                <h3>Second</h3>
+            </div>
+        </div>
+    </div>
+    <a href="https://www.pexels.com/photo/selective-focus-photography-of-spark-1234390/" target="_blank" class="credit">
+        <p>Photo by Malte Luk</p>
+    </a>
+    <select name="countdown-name-dropdown" id="countdown-name-dropdown">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+    </select>
+
+    <!-- Scripts -->
+    <script src="js/confetti.js"></script>
+    <script src="js/countdown-script.js"></script>
+</body>
+
+</html>
