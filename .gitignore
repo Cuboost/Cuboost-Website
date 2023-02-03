@@ -1,0 +1,10 @@
+# Ignore Firebase Files
+.firebase/
+.firebaserc
+firebase.json
+
+# Ignore Configurations
+.vscode/
+
+# Ignore Mac system files
+.DS_store
