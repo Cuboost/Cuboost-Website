@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Random Number</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/random-number.css">
+</head>
+
+<body>
+    <!-- Back Button -->
+    <a href="utilities.html">
+        <button id="back-button">Back</button>
+    </a>
+
+    <!-- Main -->
+    <main>
+        <div id="result">
+            <!-- Number -->
+            <h1 id="number">--</h1>
+            <!-- Button -->
+            <button id="button" onclick="generateNumber()">Generate</button>
+        </div>
+        <div class="vertical-line"></div>
+        <div id="settings">
+            <!-- Min -->
+            <label for="min">Minimum</label>
+            <input type="number" name="min" id="min" value="1">
+            <!-- Max -->
+            <label for="max">Maximum</label>
+            <input type="number" name="max" id="max" value="10">
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script src="./js/random-number.js"></script>
+</body>
+
+</html>

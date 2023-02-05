@@ -133,91 +133,12 @@
                         fill-rule="nonzero" />
                 </svg>
                 <div class="row-text">
-                    <h2>Cuboost</h2>
+                    <h2>CUBOOST</h2>
                     <p>A relaxing game...</p>
                 </div>
             </div>
         </a>
     </div>
-
-    <div id="container">
-        <img src="./css/images/new-year.jpg" alt="" id="test" width="600px">
-    </div>
-
-    <style>
-        #test {
-            border-radius: 20px;
-            transition: all 0.5s;
-            overflow: hidden;
-            position: relative;
-        }
-
-        #container {
-            perspective: 15px;
-        }
-    </style>
-
-    <script>
-        (function () {
-            var container = document.getElementById("container");
-            var mouse = {
-                _x: 0,
-                _y: 0,
-                x: 0,
-                y: 0,
-                updatePosition: function (event) {
-                    var e = event || window.event;
-                    this.x = e.clientX - this._x;
-                    this.y = e.clientY - this._y * -1;
-                },
-                setOrigin: function (e) {
-                    this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
-                    this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
-                },
-                show: function () {
-                    return "(" + this.x + ", " + this.y + ") ";
-                }
-            }
-
-            mouse.setOrigin(container);
-
-            var counter = 0;
-            var refreshRate = 10;
-            var isTimeToUpdate = function () {
-                return counter++ % refreshRate === 0;
-            }
-            var onMouseEnterHandler = function (event) {
-                update(event);
-            }
-
-            // var onMouseLeaveHandler = function() {
-            //     inner.style
-            // }
-
-            var onMouseMoveHandler = function (event) {
-                if (isTimeToUpdate()) {
-                    update(event);
-                }
-            }
-
-            var update = function () {
-                mouse.updatePosition(event);
-                updateTransformStyle(
-                    (mouse.y / container.offsetHeight / 2).toFixed(2),
-                    (mouse.x / container.offsetWidth / 2).toFixed(2),
-                )
-            }
-
-            var updateTransformStyle = function (x, y) {
-                var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)"
-                container.style.transform = style;
-            }
-
-            container.onmousemove = onMouseMoveHandler;
-            container.onmouseenter = onMouseEnterHandler;
-        })();
-    </script>
-
 
     <!-- About Cuboost Section -->
     <div class="about-cuboost-section" id="about-cuboost">
@@ -248,7 +169,7 @@
             </div>
         </div>
         <a href="about-me.html">
-            <div class="about-paragraph">
+            <div id="about-me">
                 <h2>About me</h2>
             </div>
         </a>

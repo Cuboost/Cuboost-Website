@@ -577,7 +577,8 @@ a:active {
     display: flex;
     justify-content: space-evenly;
     background-color: var(--dark);
-    margin: 20px;
+    margin: 20px auto;
+    width: 50vw;
     border-radius: 20px;
     transition: background-color 1s;
     min-height: 325px;
@@ -653,15 +654,36 @@ a:active {
     width: 20vw;
 }
 
+/* Devices */
+@media screen and (min-width: 700px) {
+    .row {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .row {
+        width: 95vw;
+    }
+
+    .utilities-icons {
+        display: none;
+    }
+
+    #cuboost-icon {
+        display: none;
+    }
+}
+
 /* Section titles */
 .section-title {
-    margin: 0 20px;
     background-color: var(--dark);
     padding: 3px;
     border-radius: 30px;
     transition: all 1s;
     text-align: center;
-    margin: 30px;
+    width: fit-content;
+    margin: 30px auto;
 }
 
 .section-title>h1 {
@@ -750,11 +772,23 @@ a:active {
     }
 }
 
+/* About Me */
+#about-me {
+    background-color: var(--dark);
+    padding: 30px 100px;
+    border-radius: 30px;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    transition: all 1s;
+}
+
 /* Footer */
 .footer {
     background-color: var(--dark);
-    margin: 30px;
-    padding: 20px;
+    width: fit-content;
+    margin: auto;
+    padding: 20px 15vw;
     border-radius: 20px;
     text-align: center;
 }
