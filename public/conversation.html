@@ -8,7 +8,7 @@
     <title>Conversation</title>
     <link rel="icon" type="image/x-icon" href="./css/images/cuboost-favicon.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/conversation-style.css">
+    <link rel="stylesheet" href="css/conversation.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,15 @@
 </head>
 
 <body>
+    <!-- Back Button -->
+    <a href="utilities.html"><button id="back-button">Back</button></a>
+
+    <!-- Title -->
     <div class="title">
         <h1>Conversations</h1>
     </div>
+
+    <!-- Settings -->
     <button onclick="openSettings()" class="settings-btn">Settings</button>
     <div class="settings" id="settings">
         <a href="javascript:void(0)" class="close-btn" onclick="closeSettings()">&times;</a>
@@ -39,10 +45,13 @@
             </div>
         </div>
     </div>
+
+    <!-- Messages -->
     <br>
     <p class="messages" id="messages">
-        Our awesome conversation starts here...
+        Our awesome conversation starts here... <br>(This app is still under development.)
     </p>
+    <!-- Input -->
     <div class="input-container">
         <textarea name="main-text-input" id="main-text-input" class="main-text-input unselectable"
             placeholder="Write something..."></textarea>

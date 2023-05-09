@@ -1,0 +1,120 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    font-family: 'Secular One', sans-serif;
+}
+
+/* Nav */
+nav {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+}
+
+#logo {
+    font-size: 2.5rem;
+    user-select: none;
+    color: rgb(29, 73, 111);
+    transition: all 0.4s;
+}
+
+#logo:hover {
+    font-size: 2.8rem;
+}
+
+#link {
+    width: 40vw;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px black;
+    background: white;
+    transition: all 0.4s;
+}
+
+#link:hover,
+#link:focus {
+    box-shadow: 1px 1px 20px black;
+}
+
+#search,
+#resize {
+    border: none;
+    padding: 8px 30px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px black;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search:hover,
+#resize:hover {
+    background-color: rgb(240, 240, 240);
+    box-shadow: 1px 1px 20px black;
+}
+
+#search:active,
+#resize:active {
+    padding: 6px 24px;
+}
+
+#search svg,
+#resize svg {
+    width: 25px;
+}
+
+/* Main */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+#web-page {
+    background-color: rgb(29, 73, 111);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+#resize-container {
+    min-width: 150px;
+    min-height: 150px;
+    resize: none;
+    overflow: hidden;
+}
+
+.resizable {
+    border-radius: 30px;
+    resize: both !important;
+    margin: 0 20px;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+#dimensions {
+    color: rgb(29, 73, 111);
+    background-color: rgba(229, 229, 229, 0.9);
+    position: absolute;
+    padding: 10px 20px;
+    border-top-right-radius: 20px;
+    left: 0;
+    bottom: 0;
+    display: none;
+}

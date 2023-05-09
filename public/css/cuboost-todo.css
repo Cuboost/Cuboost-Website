@@ -1,0 +1,245 @@
+/* Font: Comfortaa */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+/* Colors */
+:root {
+    --primary: #F27405;
+    --secondary: #F2B84B;
+    --background-color: linear-gradient(120deg, var(--secondary), var(--primary));
+    --text-color: white;
+    --font-family: 'Comfortaa', sans-serif;
+}
+
+/* Remove Defaults */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Title and Input */
+header {
+    font-size: 1.5rem;
+    padding: 20px;
+}
+
+header,
+form {
+    min-height: 20vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+form input,
+form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background-color: var(--text-color);
+}
+
+form input {
+    width: 30vw;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+form button {
+    color: var(--primary);
+    background: var(--text-color);
+    cursor: pointer;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+form button:hover {
+    color: var(--text-color);
+    background: var(--primary);
+}
+
+
+@media screen and (max-width: 600px) {
+    form {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    form input {
+        min-width: 100px;
+    }
+}
+
+/* Container wrapping the list */
+#todo-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+/* List */
+#todo-list {
+    min-width: 30%;
+    list-style: none;
+    padding: 0 20px;
+    max-height: 50vh;
+    overflow: scroll;
+    border-radius: 20px;
+}
+
+/* DIV generated in JavaScript */
+.todo {
+    margin: 0.5rem;
+    background: var(--text-color);
+    color: black;
+    font-size: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 20px;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    min-width: 200px;
+    max-width: 80vw;
+}
+
+.todo li {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+/* Buttons */
+.trash-btn,
+.complete-btn {
+    background: var(--primary);
+    color: var(--text-color);
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.complete-btn {
+    background: rgb(7, 149, 7);
+}
+
+.trash-btn {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+
+.trash-btn i,
+.complete-btn i {
+    pointer-events: none;
+}
+
+/* Todo Text */
+.todo-item {
+    text-align: left;
+    padding: 0 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+/* Completed Animation When Marked As Complete */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* Fall Animation When Deleted */
+.fall {
+    -webkit-transform: translateY(8rem) rotateZ(20deg);
+    -ms-transform: translateY(8rem) rotate(20deg);
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+/* Select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    color: var(--primary);
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+#select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#select::after {
+    content: "\25BC";
+    position: absolute;
+    background: var(--text-color);
+    color: var(--primary);
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    border-bottom-right-radius: 24px;
+    border-top-right-radius: 20px;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+#select:hover::after {
+    background: var(--primary);
+    color: var(--text-color);
+}
+
+/* Message */
+#message {
+    padding: 10%;
+    font-size: 1.5rem;
+}

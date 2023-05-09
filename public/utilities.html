@@ -5,41 +5,216 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Refresh -->
-    <meta http-equiv="refresh" content="0; url =
-    coming-soon.html" />
     <!-- Title -->
     <title>Utilities</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./css/images/cuboost-favicon.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/utilities-style.css">
-    <link rel="stylesheet" href="css/utilities-sidenav-style.css">
+    <link rel="stylesheet" href="css/utilities.css">
 </head>
 
 <body>
+    <!-- Sidenav -->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" id="closeBtn" onclick="closeNav()">&times;</a>
         <div class="sidenav-links">
             <a href="index.html">Home</a>
             <a href="clock.html">Clock</a>
             <a href="countdown.html">Countdown</a>
-            <a href="coin-flipper.html">Coin Flip</a>
+            <a href="weather.html">Weather</a>
+            <a href="cuboost-todo.html">Todo</a>
+            <a href="coin-flipper.html">Flip a coin</a>
+            <a href="emoji-generator.html">Emoji Generator</a>
+            <a href="random-number.html">Random Number</a>
             <a href="art.html">Art Ideas</a>
             <a href="conversation.html">Conversation</a>
+            <a href="meditation.html">Meditation</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="beatmaker.html">Beatmaker</a>
+            <a href="dev-tool.html">Dev Tool</a>
         </div>
     </div>
     <span style="font-size: 50px; cursor:pointer; transition: all 1s;" id="openBtn" onclick="openNav()">&#9776;</span>
-    <div id="main">
+
+    <!-- Main -->
+    <main id="main">
         <!-- Title -->
-        <h1>Utilities</h1>
-        <div class="tile">
-            <h2>Coinflip</h2>
-        </div>
-    </div>
+        <h1 id="title">Utilities</h1>
+
+        <!-- <div id="carousel" data-carousel>
+            <button data-carousel-button="prev">Prev</button>
+            <button data-carousel-button="next">Next</button>
+            <div id="tiles" data-slides>
+
+            </div>
+        </div> -->
+
+        <!-- Sections -->
+        <section id="flip-a-coin">
+            <!-- Card -->
+            <div class="card-container">
+                <div class="card">
+                    <div class="image-card">
+                        <div class="circle"></div>
+                        <img src="css/images/coin-black-and-white.svg" alt="Coin">
+                    </div>
+                    <div class="info">
+                        <h1 class="title">Flip a Coin</h1>
+                        <h3>A simple coin flipper for any occasion!</h3>
+                        <div class="discover">
+                            <a href="coin-flipper.html">
+                                <button>Discover</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tiles -->
+            <div class="tiles-container">
+                <div class="tile">
+                    <h2 class="tile-description">Flip a coin stats</h2>
+                    <div id="coin-stats">
+                        <div id="heads">
+                            <h3>0</h3>
+                            <p>Heads</p>
+                        </div>
+                        <div id="tails">
+                            <h3>0</h3>
+                            <p>Tails</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tile">
+                    <button>Reset</button>
+                    <a href="coin-flipper.html">
+                        <button>Flip a Coin</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Random Number -->
+        <section id="random-number">
+            <!-- Tiles -->
+            <div class="tiles-container">
+                <div class="tile">
+                    <h1>0</h1>
+                    <h2 class="tile-description">Random Number of the Day</h2>
+                </div>
+                <div class="tile">
+                    <h2 class="tile-description">True or False</h2>
+                    <h1 id="true-false">--</h1>
+                    <!-- Loading -->
+                    <div class="loader"></div>
+                    <button id="true-false-button">Change</button>
+                </div>
+            </div>
+
+            <!-- Card -->
+            <div class="card-container">
+                <div class="card">
+                    <div class="image-card">
+                        <div class="circle"></div>
+                        <img src="css/images/1_2_3.svg" alt="Numbers">
+                    </div>
+                    <div class="info">
+                        <h1 class="title">Random Number</h1>
+                        <h3>A simple customizable number generator.</h3>
+                        <div class="discover">
+                            <a href="random-number.html">
+                                <button>Discover</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="clock">
+            <div class="card-container">
+                <div class="card">
+                    <div class="image-card">
+                        <div class="circle"></div>
+                        <img src="css/images/clock.svg" alt="Clock">
+                    </div>
+                    <div class="info">
+                        <h1 class="title">Clock</h1>
+                        <h3>A customizable clock.</h3>
+                        <div class="discover">
+                            <a href="clock.html">
+                                <button>Discover</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile">
+                <h1 id="time">--</h1>
+                <h2 class="tile-description">Time</h2>
+            </div>
+        </section>
+
+        <section>
+            <div class="card-container">
+                <div class="card">
+                    <div class="image-card">
+                        <div class="circle"></div>
+                        <img src="css/images/clock.svg" alt="Weather">
+                    </div>
+                    <div class="info">
+                        <h1 class="title">Weather</h1>
+                        <h3>Check the weather!</h3>
+                        <div class="discover">
+                            <a href="weather.html">
+                                <button>Discover</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="image-card">
+                        <div class="circle"></div>
+                        <img src="css/images/clock.svg" alt="Countdown">
+                    </div>
+                    <div class="info">
+                        <h1 class="title">Count down</h1>
+                        <h3>A simple customizable countdown to various events, such as New Year!</h3>
+                        <div class="discover">
+                            <a href="countdown.html">
+                                <button>Discover</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <div class="card-container">
+            <div class="card">
+                <div class="image-card">
+                    <div class="circle"></div>
+                    <img src="css/images/Coin.png" alt="Coin">
+                </div>
+                <div class="info">
+                    <h1 class="title">Flip a Coin</h1>
+                    <h3>A simple coin flipper for any occasion!</h3>
+                    <div class="discover">
+                        <a href="coin-flipper.html">
+                            <button>Discover</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+    </main>
 
     <!-- Script -->
-    <script src="./js/utilities-navbar-script.js"></script>
+    <script src="./js/utilities.js"></script>
 </body>
 
 </html>

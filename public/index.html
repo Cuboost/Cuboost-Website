@@ -34,36 +34,33 @@
 </script>
 
 <body>
+    <!-- Splash -->
     <div class="display-none splash">
-        <div>
-            <div class="text-box animated-welcome">
-                <span>W</span>
-                <span>e</span>
-                <span>l</span>
-                <span>c</span>
-                <span>o</span>
-                <span>m</span>
-                <span>e</span>
-            </div>
-            <hr class="hr-splash">
-            <div class="text-box center-flex">
-                <div class="animated-typing">to</div>
-            </div>
-            <hr class="hr-splash">
-            <div class="text-box animated-cuboost">
-                <span>C</span>
-                <span>U</span>
-                <span>B</span>
-                <span>O</span>
-                <span>O</span>
-                <span>S</span>
-                <span>T</span>
-            </div>
-        </div>
+        <h1 class="text-box animated-welcome">WELCOME</h1>
     </div>
     <div class="display-none cuboost-splash">
         <h1 class="animate-character">C</h1>
     </div>
+
+    <!-- Nav -->
+    <nav id="main-nav" class="nav-fixed">
+        <div id="logo">
+            <h3>CUBOOST</h3>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="utilities.html">Utilities</a></li>
+            <li><a href="cuboost-game.html">Cuboost</a></li>
+            <li><a href="about-me.html">About me</a></li>
+        </ul>
+        <div id="menu-button">
+            <div id="line-1"></div>
+            <div id="line-2"></div>
+            <div id="line-3"></div>
+        </div>
+    </nav>
+
+    <!-- Header -->
     <a href="#links">
         <div class="unselectable animated-content text-box" id="cuboost-header">
             <!-- Text -->
@@ -78,10 +75,15 @@
                 <img src="./css/images/header-icon-6.png" id="cuboost-icon">
                 <img src="./css/images/header-icon-7.png" id="cuboost-icon">
             </div>
+            <!-- Scroll -->
+            <svg id="scroll-down" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#ffffff"
+                    d="m2.005 12.002c0-5.517 4.48-9.997 9.997-9.997 5.518 0 9.998 4.48 9.998 9.997 0 5.518-4.48 9.998-9.998 9.998-5.517 0-9.997-4.48-9.997-9.998zm6.21 1.524s1.505 1.501 3.259 3.254c.147.147.338.22.53.22s.384-.073.531-.22c1.753-1.752 3.258-3.254 3.258-3.254.145-.145.217-.335.216-.526 0-.192-.074-.384-.22-.53-.293-.293-.766-.295-1.057-.004l-1.978 1.977v-6.693c0-.414-.336-.75-.75-.75s-.75.336-.75.75v6.693l-1.978-1.978c-.289-.289-.762-.287-1.055.006-.146.147-.22.339-.221.53s.071.38.215.525z" />
+            </svg>
         </div>
     </a>
     <br>
-
     <!-- Links Section -->
     <div class="links-section" id="links">
         <br>
@@ -147,7 +149,7 @@
             <h1>About Cuboost</h1>
         </div>
         <div class="about-paragraphs">
-            <div class="about-paragraph">
+            <div class="about-paragraph scroll-appear">
                 <p>
                     Cuboost was made for fun. It first all started with a game: "A cube that can boost!".
                 </p>
@@ -173,6 +175,17 @@
                 <h2>About me</h2>
             </div>
         </a>
+    </div>
+
+    <div id="feedback-pop-up">
+        <h4>&#9733; Rate our website &#9733;</h4>
+        <button id="closeRating">&#10539;</button>
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScyr4adtuisyaTLWpib0oLMCUhDRTJOWb_gJCbibi-LY_wUHA/viewform?embedded=true"
+            frameborder="0" marginheight="0" marginwidth="0" id="feedback">Loading…</iframe>
+        <iframe seamless frameborder="0" scrolling="no" id="rating"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZGGy2hkT7H1oliNlW9Eksx7O4i1GBRHMpUCt3ZlQBQBRHtN6hhtfw3L9AMcAtK7dxeQIS8EMto7D4/pubchart?oid=1765025765&amp;format=interactive"></iframe>
+        <button id="feedbackResultsButton">See Results</button>
     </div>
 
 

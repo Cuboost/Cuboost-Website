@@ -1,0 +1,229 @@
+/* Colors */
+:root {
+    --primary: #A39264;
+    --secondary: #E0C382;
+    --light: #F5E3B3;
+    --dark: #5C5238;
+    --dark-hover: #4f4630;
+    --black: #39321e;
+    --text-color: rgb(254, 255, 223);
+}
+
+/* Body */
+body {
+    font-family: "Lato", sans-serif;
+    background-color: var(--primary);
+    color: var(--black);
+}
+
+#title {
+    font-size: 4rem;
+    text-align: center;
+}
+
+/* Main Content */
+main {
+    transition: margin-left .5s;
+    padding: 5px 20px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+/* Sections */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0;
+}
+
+/* Tiles */
+.tile {
+    width: 45%;
+    margin: 20px;
+    width: 15rem;
+    height: fit-content;
+    border-radius: 40px;
+    padding: 1rem;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+    background-color: var(--secondary);
+    user-select: none;
+    transition: all 0.4s;
+    grid-column: 2;
+}
+
+.tiles-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Tile 1 */
+#coin-stats {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#coin-stats h3 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Card */
+/* Container for movement */
+.card-container {
+    margin: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+/* Actual card */
+.card {
+    transform-style: preserve-3d;
+    width: 15rem;
+    border-radius: 40px;
+    padding: 0rem 5rem;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+    background-color: var(--secondary);
+}
+
+.image-card {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.image-card img {
+    height: 13vh;
+    z-index: 2;
+    transition: all 0.75s ease-out;
+}
+
+.circle {
+    width: 8rem;
+    height: 8rem;
+    background: linear-gradient(to right, var(--dark), var(--primary));
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.info h1 {
+    font-size: 3rem;
+    transition: all 0.75s ease-out;
+    text-transform: uppercase;
+}
+
+.info h3 {
+    font-size: 1.3rem;
+    padding: 2rem 0;
+    color: var(--black);
+    font-weight: lighter;
+    transition: all 0.75s ease-out;
+    text-transform: uppercase;
+}
+
+button.active {
+    background: var(--black);
+    color: white;
+}
+
+.discover {
+    margin: 2rem 1rem;
+    transition: all 0.75s ease-out;
+}
+
+button {
+    margin: 10px 0;
+    width: 100%;
+    padding: 1rem 0rem;
+    background: none;
+    border: 2px solid var(--dark);
+    color: var(--black);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 0.4s;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: var(--dark);
+    color: var(--text-color);
+}
+
+button:active {
+    background: var(--dark-hover);
+    color: var(--text-color);
+}
+
+
+
+/* Sidenav */
+.sidenav {
+    height: 95vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--dark);
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin: 2.5vh 10px;
+    border-radius: 20px;
+    box-shadow: 8px 8px var(--black);
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #cbcbcb;
+    display: block;
+    transition: 0.5s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    transition: all 0.5s;
+}
+
+#openBtn {
+    position: absolute;
+}
+
+.sidenav-links {
+    padding-top: 60px;
+}
+
+.sidenav-links a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

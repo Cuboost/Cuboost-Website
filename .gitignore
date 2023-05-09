@@ -8,3 +8,5 @@ firebase.json
 
 # Ignore Mac system files
 .DS_store
+
+public/css/video/

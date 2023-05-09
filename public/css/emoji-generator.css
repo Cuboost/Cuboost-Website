@@ -5,10 +5,18 @@
 body {
     height: 100vh;
     overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     text-align: center;
+    background: -webkit-gradient(linear, right bottom, left top, from(#35446e), to(#9fc1df));
+    background: -o-linear-gradient(bottom right, #35446e, #9fc1df);
     background: linear-gradient(to top left, #35446e, #9fc1df);
     color: aliceblue;
     font-family: 'Comfortaa', cursive;
@@ -16,18 +24,45 @@ body {
 
 /* Main */
 main {
-    background-color: #9fc1df;
+    background-color: #a9c6e0;
     width: 20vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     padding: 10vh;
     border-radius: 20px;
     position: relative;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
 /* Emoji Box */
 #emoji-box {
     font-size: 5rem;
     margin-bottom: 20px;
+}
+
+/* Mobile */
+@media screen and (max-width: 800px) {
+    #emoji-box {
+        font-size: 4rem;
+    }
+
+    #bottom-right {
+        right: initial !important;
+    }
 }
 
 /* Buttons */
@@ -40,6 +75,8 @@ button {
     cursor: pointer;
     color: aliceblue;
     background-color: #35446e;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
     transition: all 1s;
     font-family: 'Comfortaa', cursive;
 }
@@ -58,6 +95,7 @@ button:active {
     position: absolute;
     left: 20px;
     top: 20px;
+    z-index: 200;
 }
 
 #bottom-right {

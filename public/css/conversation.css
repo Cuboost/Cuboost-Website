@@ -170,7 +170,7 @@ a:active {
     color: rgb(164, 164, 164);
 }
 
-/* Button */
+/* Buttons */
 button {
     border: none;
     color: rgb(255, 255, 255);
@@ -195,4 +195,10 @@ button:hover {
 button:active {
     background-color: var(--dark-active);
     color: rgb(211, 211, 211);
+}
+
+#back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }

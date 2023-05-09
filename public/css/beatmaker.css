@@ -1,0 +1,179 @@
+/* Variables */
+:root {
+    --color-1: #00026B;
+    --color-2: #002582;
+    --color-3: #003B6B;
+    --color-4: #025467;
+    --color-5: #028479;
+    --color-6: #0c96a5;
+    --font: 'Montserrat', sans-serif;
+    --text-color-white: white;
+}
+
+/* Remove Default Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Font */
+body {
+    font-family: var(--font);
+}
+
+/* Header */
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header */
+header {
+    text-align: center;
+}
+
+/* Title */
+header h1 {
+    margin: 80px 10px 30px 10px;
+    font-size: 4rem;
+    animation: title 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes title {
+    0% {
+        color: var(--color-1);
+    }
+
+    20% {
+        color: var(--color-2);
+    }
+
+    40% {
+        color: var(--color-3);
+    }
+
+    60% {
+        color: var(--color-4);
+    }
+
+    80% {
+        color: var(--color-5);
+    }
+
+    100% {
+        color: var(--color-6);
+    }
+}
+
+/* Description */
+header p {
+    font-size: 1.5rem;
+    color: var(--color-1);
+}
+
+/* Pads */
+#pads {
+    width: 100%;
+    display: flex;
+}
+
+#pads>div {
+    height: 100px;
+    width: 100px;
+    flex: 1;
+    cursor: pointer;
+}
+
+#pads>div {
+    height: 100px;
+    width: 100px;
+    flex: 1;
+    cursor: pointer;
+}
+
+#pad-1 {
+    background: var(--color-1);
+}
+
+#pad-2 {
+    background: var(--color-2);
+}
+
+#pad-3 {
+    background: var(--color-3);
+}
+
+#pad-4 {
+    background: var(--color-4);
+}
+
+#pad-5 {
+    background: var(--color-5);
+}
+
+#pad-6 {
+    background: var(--color-6);
+}
+
+/* Jump Animation for Visuals */
+@keyframes jump {
+    0% {
+        bottom: 0;
+        left: 20%;
+    }
+
+    50% {
+        bottom: 50%;
+        left: 50%;
+    }
+
+    100% {
+        bottom: 0%;
+        left: 80%;
+    }
+}
+
+/* Visuals */
+#visual>div {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* Back Button */
+button {
+    padding: 6px 0;
+    font-size: 0.9rem;
+    border: 3px solid var(--color-4);
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--color-4);
+    background: none;
+    transition: all 1s;
+    font-family: var(--font);
+}
+
+button:hover {
+    color: var(--text-color-white);
+    background-color: var(--color-4);
+}
+
+button:active {
+    width: 100px;
+    transition: width 0.3s;
+}
+
+#back-button {
+    width: 100px;
+    padding: 10px 0;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}

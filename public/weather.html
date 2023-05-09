@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Weather</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="css/images/cuboost-favicon.png" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/weather.css">
+</head>
+
+<body>
+    <!-- Loading -->
+    <div id="loader-container">
+        <div class="loader"></div>
+        <div id="quote-container">
+            <h2 id="quote">--</h2>
+            <h3 id="quote-author">--</h3>
+        </div>
+    </div>
+    <!-- Main -->
+    <main id="forecast">
+        <a href="utilities.html"><button id="back-button">Back</button></a>
+        <div id="title">
+            <img alt="icon" id="icon" draggable="false">
+            <h1 id="name">--</h1>
+        </div>
+        <div id="temperature">
+            <div id="degree-section">
+                <h2 id="temperature-degree">--</h2>
+                <span id="temperature-units">F</span>
+            </div>
+            <div id="temperature-description">--</div>
+            <!-- Forecast tile -->
+            <div id="forecast-tiles">
+                <div class="forecast-tile selected" id="0" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="1" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="2" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="3" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="4" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="5" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="6" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="7" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="8" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="9" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="10" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="11" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+                <div class="forecast-tile" id="12" onclick="tileClicked(id)">
+                    <h3 class="title">--</h3>
+                    <p class="temperature">--</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Source -->
+        <a href="https://www.weather.gov/" id="source" target="_blank">National Weather Service</a>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/weather-quotes.js"></script>
+    <script src="js/weather.js"></script>
+</body>
+
+</html>

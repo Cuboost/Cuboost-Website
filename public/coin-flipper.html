@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme -->
+    <meta name="theme-color" content="#575ce5" />
+    <!-- Description -->
+    <meta name="description" content="A simple coin flipper for any occasion!">
+    <!-- Title -->
     <title>Flip A Coin</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./css/images/Coin.png">
-    <link rel="stylesheet" href="./css/coin-flipper-style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/coin-flipper.css">
 </head>
 
 <body>
-    <a href="index.html">
+    <a href="utilities.html">
         <button id="back-button">Back</button>
     </a>
     <div class="container">
@@ -21,10 +28,10 @@
         </div>
         <div class="coin unselectable">
             <div class="heads">
-                <img src="./css/images/Heads.png" alt="Heads">
+                <img src="./css/images/Heads.png" alt="Heads" draggable="false">
             </div>
             <div class="tails">
-                <img src="./css/images/Tails.png" alt="Tails">
+                <img src="./css/images/Tails.png" alt="Tails" draggable="false">
             </div>
         </div>
         <div class="buttons">
@@ -34,7 +41,7 @@
     </div>
 
     <!-- Script -->
-    <script src="./js/coin-flipper-script.js"></script>
+    <script src="./js/coin-flipper.js"></script>
 </body>
 
 </html>

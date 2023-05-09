@@ -1,0 +1,183 @@
+/* Remove Margin and Padding */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Colors */
+:root {
+    /* Error background color. The background should be changed using JavaScript */
+    --background-image: linear-gradient(rgba(230, 230, 230, 0.2), rgba(170, 170, 170, 0.2));
+}
+
+/* Body */
+body {
+    font-family: "Lato", sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-size: 100%;
+    background: var(--background-image);
+}
+
+#elements {
+    background-color: rgba(171, 171, 171, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    min-width: 350px;
+    width: 50vw;
+    text-align: center;
+}
+
+#countdown-name {
+    font-size: 5rem;
+    font-weight: bold;
+    padding-bottom: 3rem;
+}
+
+#countdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+#day,
+#hour,
+#minute,
+#second {
+    font-size: 3rem;
+    -webkit-transition: font-size 0.5s;
+    -o-transition: font-size 0.5s;
+    transition: font-size 0.5s;
+}
+
+@-webkit-keyframes seconds {
+    to {
+        font-size: 0rem;
+        opacity: 0;
+    }
+}
+
+@keyframes seconds {
+    to {
+        font-size: 0rem;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes padding-none {
+    to {
+        padding-bottom: 0;
+    }
+}
+
+@keyframes padding-none {
+    to {
+        padding-bottom: 0;
+    }
+}
+
+#credit {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+#countdown-background-dropdown {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+
+/* Links */
+a {
+    text-decoration: none;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    color: white;
+}
+
+a:hover {
+    color: rgb(206, 206, 206);
+}
+
+a:active {
+    color: rgb(174, 174, 174);
+}
+
+/* Unselectable */
+.unselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Select */
+select {
+    font-family: "Lato", sans-serif;
+    text-rendering: auto;
+    color: white;
+    background-color: rgba(185, 185, 185, 0.6);
+    cursor: pointer;
+    border-style: solid;
+    border: none;
+    -o-border-image: initial;
+    border-image: initial;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+/* Buttons */
+button {
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    font-family: "Lato", sans-serif;
+    -webkit-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: rgba(185, 185, 185, 0.6);
+    color: white;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: rgba(155, 155, 155, 0.6);
+}
+
+button:active {
+    background-color: rgba(124, 124, 124, 0.6);
+}
+
+#back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}

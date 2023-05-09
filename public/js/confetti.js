@@ -4,15 +4,22 @@ var startConfetti; //call to start confetti animation
 var stopConfetti; //call to stop adding confetti
 var toggleConfetti; //call to start or stop the confetti animation depending on whether it's already running
 var removeConfetti; //call to stop the confetti animation and remove all confetti immediately
+var colors = ["DodgerBlue", "OliveDrab", "Gold", "Pink", "SlateBlue", "LightBlue", "Violet", "PaleGreen", "SteelBlue", "SandyBrown", "Chocolate", "Crimson"]; // Default error colors
+
+// Change Confetti Colors
+function confettiOption1() {
+	colors = ["#D2B275", "#997948", "#F2DAAC", "#BF9056", "#8C6B42"];
+}
+
+function confettiOption2() {
+	colors = ["#04016C", "#030BA6", "#020873", "#3B8699", "#788FC1", "LightBlue", "#6580C2"];
+}
 
 (function () {
 	startConfetti = startConfettiInner;
 	stopConfetti = stopConfettiInner;
 	toggleConfetti = toggleConfettiInner;
 	removeConfetti = removeConfettiInner;
-	// var colors = ["DodgerBlue", "OliveDrab", "Gold", "Pink", "SlateBlue", "LightBlue", "Violet", "PaleGreen", "SteelBlue", "SandyBrown", "Chocolate", "Crimson"];
-	// var colors = ["#04016C", "#030BA6", "#020873", "#3B8699", "#788FC1", "LightBlue", "#6580C2"];
-	var colors = ["#D2B275", "#997948", "#F2DAAC", "#BF9056", "#8C6B42"];
 	var streamingConfetti = false;
 	var animationTimer = null;
 	var particles = [];
